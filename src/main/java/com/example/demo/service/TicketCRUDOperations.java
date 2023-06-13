@@ -6,11 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CRUDOperations {
+public class TicketCRUDOperations {
     private final TicketRepository ticketRepository;
 
     @Autowired
-    public CRUDOperations(TicketRepository ticketRepository) {
+    public TicketCRUDOperations(TicketRepository ticketRepository) {
         this.ticketRepository = ticketRepository;
     }
 
@@ -30,3 +30,4 @@ public class CRUDOperations {
         ticketRepository.deleteById(ticketId);
     }
 }
+

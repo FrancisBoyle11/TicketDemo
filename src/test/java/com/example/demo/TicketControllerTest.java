@@ -2,7 +2,8 @@ package com.example.demo;
 
 import com.example.demo.controller.TicketController;
 import com.example.demo.model.Ticket;
-import com.example.demo.service.CRUDOperations;
+
+import com.example.demo.service.TicketCRUDOperations;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -11,12 +12,14 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.*;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 class TicketControllerTest {
     @Mock
-    private CRUDOperations crudOperations;
+    private TicketCRUDOperations crudOperations;
 
     @InjectMocks
     private TicketController ticketController;
@@ -120,4 +123,3 @@ class TicketControllerTest {
         verify(crudOperations, never()).deleteTicket(ticketId);
     }
 }
-

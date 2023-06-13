@@ -1,19 +1,20 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.Ticket;
-import com.example.demo.service.CRUDOperations;
+import com.example.demo.service.TicketCRUDOperations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+
 @RestController
 @RequestMapping("/tickets")
 public class TicketController {
-    private final CRUDOperations crudOperations;
+    private final TicketCRUDOperations crudOperations;
 
     @Autowired
-    public TicketController(CRUDOperations crudOperations) {
+    public TicketController(TicketCRUDOperations crudOperations) {
         this.crudOperations = crudOperations;
     }
 
@@ -56,3 +57,4 @@ public class TicketController {
         }
     }
 }
+

@@ -1,2 +1,0 @@
-# TicketDemo
-Ticket application.
